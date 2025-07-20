@@ -27,7 +27,7 @@ class StudentContentController extends BaseController
     //echo view('templates/headerdash1');
     echo view('student/sidebar_content', $data); // Sidebar left
     echo view('student/chapter_view');        // Right side default message
-    //echo view('templates/footerdash');
+    echo view('templates/footerdash');
 }
  
 

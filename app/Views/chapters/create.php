@@ -6,7 +6,6 @@
     </div>
 
 
-
 <div class="form-group">
     <label for="paper_id">Select Paper</label>
         <select name="paper_id" id="paper_id" class="form-control" required>
@@ -18,8 +17,6 @@
         <?php endforeach; ?>
     </select>
 </div>
-
-
 
     <div class="form-group">
       <label for="unit_id">Select Unit</label>
@@ -40,19 +37,12 @@
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
-
-
 <script
 src="https://cdn.tiny.cloud/1/b2kytk0kpljz3uc9a5bo3vm4r3azd0jdov9qzdltds0ixm1h/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-
 
 <script>
     tinymce.init({ selector: '#editor' });
 </script>
-
-
-
-
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $('#paper_id').change(function() {

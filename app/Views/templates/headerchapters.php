@@ -168,47 +168,38 @@
                          
     <!--  student portal dropdown  -->
 
-                    <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-    data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="bi bi-person-video2 me-1"></i> Student Portal
-  </a>
+    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-video2 me-1"></i> Student Portal
+          </a>
   
   <ul class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdown" style="border: none; min-width: 250px;">
     <!-- ड्रॉपडाउन हेडर -->
-    <li class="dropdown-header bg-primary text-white py-2 px-3">
-      <i class="bi bi-journal-bookmark me-2"></i> STUDENT RESOURCES
-    </li>
-    
+          <li class="dropdown-header bg-primary text-white py-2 px-3">
+            <i class="bi bi-journal-bookmark me-2"></i> STUDENT RESOURCES
+          </li>
     <!-- मेनू आइटम्स -->
-    <li><a class="dropdown-item py-2" href="<?= base_url('studymaterials') ?>">
-      <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
-    </a></li>
-   
-    <li><a class="dropdown-item py-2" href="#">
-      <i class="bi bi-calendar-week text-success me-2"></i> Syllabus & Time Table
-    </a></li>
-    
-    <li><a class="dropdown-item py-2" href="#">
-      <i class="bi bi-download text-info me-2"></i> Downloads
-    </a></li>
-    
-    <li><a class="dropdown-item py-2" href="#">
-      <i class="bi bi-briefcase text-warning me-2"></i> Placements
-    </a></li>
-    
+          <li><a class="dropdown-item py-2" href="<?= base_url('studymaterials') ?>">
+            <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
+          </a></li>
+          <li><a class="dropdown-item py-2" href="#">
+            <i class="bi bi-calendar-week text-success me-2"></i> Syllabus & Time Table
+          </a></li>
+          <li><a class="dropdown-item py-2" href="#">
+            <i class="bi bi-download text-info me-2"></i> Downloads
+          </a></li>
+          <li><a class="dropdown-item py-2" href="#">
+            <i class="bi bi-briefcase text-warning me-2"></i> Placements
+          </a></li>
     <!-- डिवाइडर -->
-    <li><hr class="dropdown-divider my-1"></li>
-    
-    <li><a class="dropdown-item py-2" href="#">
-      <i class="bi bi-people text-secondary me-2"></i> Alumni
-    </a></li>
-  </ul>
-</li>                     
-
-                         
+          <li><hr class="dropdown-divider my-1"></li>
+          <li><a class="dropdown-item py-2" href="#">
+            <i class="bi bi-people text-secondary me-2"></i> Alumni
+          </a></li>
+    </ul>
+  </li>                                             
 <!-- contact us  -->
-
             <li class="nav-item mx-1">
                 <a class="nav-link text-white d-flex align-items-center py-2 px-3 rounded" href="<?= base_url('contact') ?>">
                 <i class="bi bi-telephone-outbound-fill me-2"></i>

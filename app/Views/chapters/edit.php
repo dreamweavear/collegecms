@@ -3,7 +3,6 @@
 
 <h2>Edit Chapter</h2>
 <form action="<?= site_url('admin/chapters/update/'.$chapter['id']) ?>" method="post">
-
     <div class="mb-3">
         <label>Course</label>
         <select name="course_id" class="form-control" required>
@@ -49,10 +48,35 @@
 
     <div class="mb-3">
         <label>Content</label>
-        <textarea name="content" class="form-control" rows="6"><?= esc($chapter['content']) ?></textarea>
+        <!-- ✅ Important: ID must be editor -->
+        <textarea name="content" id="editor" class="form-control"><?= $chapter['content'] ?></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Update Chapter</button>
 </form>
+
+<!-- TinyMCE CDN -->
+<script src="https://cdn.tiny.cloud/1/b2kytk0kpljz3uc9a5bo3vm4r3azd0jdov9qzdltds0ixm1h/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- TinyMCE Initialize -->
+<script>
+    tinymce.init({
+        selector: 'textarea[name="content"]'
+    });
+</script>
+
+
+<!-- ✅ Load TinyMCE from local path -->
+<script src="<?= base_url('js/tinymce/tinymce.min.js') ?>"></script>
+
+<script>
+    tinymce.init({
+        selector: '#editor',
+        height: 400,
+        plugins: 'code link lists fullscreen',
+        toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | code fullscreen',
+        menubar: false
+    });
+</script>
 
 <?= $this->endSection() ?>

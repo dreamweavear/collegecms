@@ -50,9 +50,6 @@ h1, h2, h3 {
 
 </style>
 
-
-
-
     <style>
         .sidebar {
             width: 280px;
@@ -187,14 +184,14 @@ h1, h2, h3 {
             </a>
           </li>
   <!-- एडमिशन -->
-  <!--
-          <li class="nav-item mx-1">
+  
+                <li class="nav-item mx-1">
             <a class="nav-link text-white d-flex align-items-center py-2 px-3 rounded" href="<?= base_url('admissionpage') ?>">
               <i class="bi bi-pencil-square me-2"></i>
               <span>Admission</span>
             </a>
           </li>
-    -->
+  
   <!-- फैसिलिटीज -->
           <li class="nav-item mx-1">
             <a class="nav-link text-white d-flex align-items-center py-2 px-3 rounded" href="<?= base_url('facilities') ?>">
@@ -214,11 +211,7 @@ h1, h2, h3 {
             <li class="dropdown-header bg-primary text-white py-2 px-3">
               <i class="bi bi-journal-bookmark me-2"></i> STUDENT RESOURCES
             </li>
-    <!-- मेनू आइटम्स -->
-          <!--  <li><a class="dropdown-item py-2" href="<?= base_url('studymaterials') ?>">
-              <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
-            </a></li>
-        -->
+   
             <li><a class="dropdown-item py-2" href="<?= base_url('student-content') ?>">
               <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
             </a></li>
@@ -269,7 +262,9 @@ h1, h2, h3 {
                             <span class="navbar-text me-2">Welcome, <strong><?= session()->get('adminName') ?></strong></span>
                             <a href="<?= base_url('/logout') ?>" class="btn btn-danger my-2 my-sm-0">Logout</a>
                         <?php else: ?>
-                            <a href="<?= base_url('/register') ?>" class="btn btn-success my-2 my-sm-0 mx-2">Register</a>
+
+                       <!--     <a href="<?= base_url('/register') ?>" class="btn btn-success my-2 my-sm-0 mx-2">Register</a>
+                        -->
                             <a href="<?= base_url('/login') ?>" class="btn btn-primary my-2 my-sm-0">Login</a>
                         <?php endif; ?>
                     </li>

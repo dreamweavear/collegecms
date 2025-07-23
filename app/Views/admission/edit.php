@@ -1,4 +1,4 @@
-<?= $this->include('templates/header') ?>
+<?= $this->include('templates/headeradmin') ?>
 
 
 <?php if (isset($validation)): ?>
@@ -13,7 +13,7 @@
     <div class="col-md-8">
       <h2 class="text-center mb-4">Edit Student Details</h2>
 
-      <form method="post" action="<?= site_url('admission/update/' . $student['id']) ?>" enctype="multipart/form-data">
+      <form method="post" action="<?= site_url('admin/admission/update/' . $student['id']) ?>" enctype="multipart/form-data">
         
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
@@ -55,7 +55,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Update</button>
-        <a href="<?= site_url('admission') ?>" class="btn btn-secondary">Cancel</a>
+        <a href="<?= site_url('admin/admission') ?>" class="btn btn-secondary">Cancel</a>
       </form>
     </div>
   </div>
@@ -69,5 +69,8 @@
     allowInput: true
   });
 </script>
+</main>
+</div>
+</div?
 
-<?= $this->include('templates/footer') ?>
+<?= $this->include('templates/footerdash') ?>

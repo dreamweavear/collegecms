@@ -1,12 +1,4 @@
-<!-- Views/student/chapter_view.php -->
-
-
-
-
-
-      
-
-        <!-- Main Content -->
+    <!-- Main Content -->
         <div class="main-content p-4">
 
         <section class="py-5"> 

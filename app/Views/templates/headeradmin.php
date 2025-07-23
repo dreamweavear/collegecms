@@ -146,7 +146,7 @@
 
   <!-- एडमिशन -->
   <li class="nav-item mx-1">
-    <a class="nav-link text-white d-flex align-items-center py-2 px-3 rounded" href="<?= base_url('admissionpage') ?>">
+    <a class="nav-link text-white d-flex align-items-center py-2 px-3 rounded" href="<?= base_url('admin/admission') ?>">
       <i class="bi bi-pencil-square me-2"></i>
       <span>Admission</span>
     </a>
@@ -169,9 +169,10 @@
     </li>
     
     <!-- मेनू आइटम्स -->
-    <li><a class="dropdown-item py-2" href="<?= base_url('studymaterials') ?>">
-      <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
-    </a></li>
+   
+                <li><a class="dropdown-item py-2" href="<?= base_url('student-content') ?>">
+              <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
+            </a></li>
    
     <li><a class="dropdown-item py-2" href="#">
       <i class="bi bi-calendar-week text-success me-2"></i> Syllabus & Time Table
@@ -297,12 +298,12 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link sidebar-link p-2" href="<?= base_url('admin/chapters/adminAdmission') ?>">
+                            <a class="nav-link sidebar-link p-2" href="<?= base_url('admissionpage') ?>">
                                 <i class="bi bi-people me-2"></i> Admission Form
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link sidebar-link p-2" href="<?= base_url('admission') ?>">
+                            <a class="nav-link sidebar-link p-2" href="<?= base_url('admin/admission') ?>">
                                 <i class="bi bi-file-earmark-text me-2"></i> Student List
                             </a>
                         </li>

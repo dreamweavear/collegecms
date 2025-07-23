@@ -244,9 +244,14 @@
     </li>
     
     <!-- मेनू आइटम्स -->
+  <!--
     <li><a class="dropdown-item py-2" href="<?= base_url('studymaterials') ?>">
       <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
     </a></li>
+    -->
+                <li><a class="dropdown-item py-2" href="<?= base_url('student-content') ?>">
+              <i class="bi bi-book text-primary me-2"></i> Study Material (LMS)
+            </a></li>
    
     <li><a class="dropdown-item py-2" href="#">
       <i class="bi bi-calendar-week text-success me-2"></i> Syllabus & Time Table

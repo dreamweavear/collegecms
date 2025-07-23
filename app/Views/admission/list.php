@@ -1,60 +1,64 @@
 <?= $this->include('templates/headeradmin') ?>
 
-<!--   php code for success message -->
+<div class="d-flex flex-column min-vh-100">
+  <div class="d-flex flex-grow-1">
 
-<?php if (session()->getFlashdata('success')): ?>
-    <div class="alert alert-success text-center">
-        <?= session()->getFlashdata('success') ?>
-    </div>
-<?php endif; ?>
+    <!-- 🧠 Main Content Area -->
+    <main class="flex-fill p-4">
+      <div class="container-fluid pb-5">
 
-<?php if (session()->getFlashdata('error')): ?>
-    <div class="alert alert-danger text-center">
-        <?= session()->getFlashdata('error') ?>
-    </div>
-<?php endif; ?>
+        <!-- ✅ Flash Messages -->
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="alert alert-success text-center col-md-8 mx-auto">
+                <?= session()->getFlashdata('success') ?>
+            </div>
+        <?php endif; ?>
 
- <main class="main-content p-4">
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger text-center col-md-8 mx-auto">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
 
-<div class="container-fluid">
+        <h2 class="text-center">Admitted Student List</h2>
+        <a href="<?= base_url('admin/admission/create') ?>" class="btn btn-primary mb-3">Add New</a>
 
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>ID</th><th>Name</th><th>Father</th><th>Course</th><th>DOB</th>
+              <th>Phone</th><th>Email</th><th>Photo</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($students as $s): ?>
+            <tr>
+              <td><?= esc($s['id']) ?></td>
+              <td><?= esc($s['name']) ?></td>
+              <td><?= esc($s['father_name']) ?></td>
+              <td><?= esc($s['course']) ?></td>
+              <td><?= esc($s['dob']) ?></td>
+              <td><?= esc($s['phone']) ?></td>
+              <td><?= esc($s['email']) ?></td>
+              <td>
+                <img src="<?= base_url('uploads/' . $s['photo']) ?>" width="100" alt="photo" class="img-thumbnail">
+              </td>
+              <td>
+                <a href="<?= base_url('admin/admission/edit/' . $s['id']) ?>" class="btn btn-sm btn-warning mb-1">Edit</a>
+                <a href="<?= base_url('admin/admission/delete/' . $s['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
 
+      </div>
+    </main>
+            </div>
+            </div>
 
-<h2 class="text-center">Admitted Student List</h2>
-<!--<a href="/admission/create">Add New</a>  -->
-<!-- changed to below -->
+  </div> <!-- end d-flex (content + sidebar) -->
 
-<a href="<?= base_url('admission/create') ?>">Add New</a>
-
-<table class="table  table-bordered table-striped table-hover">
-<!-- <table border="1"> -->
-<tr><th>ID</th><th>Name</th><th>Father</th><th>Course</th><th>DOB</th><th>Phone</th><th>Email</th><th>Photo</th><th>Action</th></tr>
-<?php foreach($students as $s): ?>
-<tr>
-<td><?= $s['id'] ?></td>
-<td><?= $s['name'] ?></td>
-<td><?= $s['father_name'] ?></td>
-<td><?= $s['course'] ?></td>
-<td><?= $s['dob'] ?></td>
-<td><?= $s['phone'] ?></td>
-<td><?= $s['email'] ?></td>
-<!-- <td><img src="/uploads/<?= $s['photo'] ?>" width="50"></td> -->
-<td><img src="<?= base_url('uploads/' . $s['photo']) ?>" width="100" alt="photo">
-
-<td>
-    <!--<a href="/admission/edit/<?= $s['id'] ?>">Edit</a> -->
-
-    <a href="<?= base_url('admission/edit/' . $s['id']) ?>" >Edit</a>
-
-    <!--<a href="/admission/delete/<?= $s['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a> -->
-    <!-- changed to below -->
-    <a href="<?= base_url('admission/delete/' . $s['id']) ?>" onclick="return confirm('Are you sure?')">Delete</a>
-</td>
-</tr>
-<?php endforeach; ?>
-</table>
+  <!-- ✅ Footer -->
+  <?= $this->include('templates/footerdash') ?>
 </div>
-</main>
-</div>    
-
-<?= $this->include('templates/footerdash') ?>

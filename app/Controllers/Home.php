@@ -19,11 +19,7 @@ class Home extends BaseController
         $data['title'] = ucfirst($page); // Capitalize the first letter
 
         return view('templates/headerdash1', $data)
-        
-           // . view('templates/headerdash2', $data)
-
             . view('pages/' . $page)
-
            . view('templates/footerdash');
     }
 }

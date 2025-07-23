@@ -87,8 +87,6 @@
             </div>
         </div>
 
-
-
         <div class="row">
             <div class="col-lg-6 py-2">
                 <img src="<?= base_url('assets/images/student.jpg') ?>" alt="College Campus" class="img-fluid rounded shadow py-5">
@@ -105,8 +103,6 @@
                 </p>
             </div>
         </div>
-
-
         <div class="row mt-5">
             <div class="col-12">
                 <h3 class="mb-4">हमारे संसाधन- </h3>
@@ -191,13 +187,9 @@
                 </div>
             </div>
         </div>
+
     </div>
 </section>
-
-
-
-            
-
 
 
 

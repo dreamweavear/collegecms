@@ -1,10 +1,10 @@
 <?php namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\ChapterModel;
-use App\Models\UnitModel;
-use App\Models\PaperModel;
-use App\Models\CourseModel;
+use App\Models\Academic\ChapterModel;
+use App\Models\Academic\UnitModel;
+use App\Models\Academic\PaperModel;
+use App\Models\Academic\CourseModel;
 $courseModel = new CourseModel();
 class ChapterController extends BaseController
 {

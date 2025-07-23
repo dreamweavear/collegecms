@@ -8,7 +8,7 @@ class Contact extends BaseController
     {
          
         return view('templates/headerdash1')
-            . view('templates/headerdash2')
+            
             . view('pages/contact')
             . view('templates/footerdash');
     }

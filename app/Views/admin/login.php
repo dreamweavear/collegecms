@@ -1,6 +1,6 @@
 
 
-<?= $this->include('templates/header') ?>
+<?= $this->include('templates/headeradmin') ?>
 
 <div class="container mt-2" style="max-width: 400px;">
     <h3 class="mb-4 text-center">Admin Login</h3>
@@ -21,5 +21,8 @@
         <button type="submit" class="btn btn-primary w-100">Login</button>
     </form>
 </div>
+</main>
+</div>
+</div>
 
-<?= $this->include('templates/footer') ?>
+<?= $this->include('templates/footerdash') ?>

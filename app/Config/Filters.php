@@ -67,15 +67,32 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, array<string, string>>>|array<string, list<string>>
      */
+  /**
     public array $globals = [
         'before' => [
+            'csrf' => ['except' => ['api/*']],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
+            'toolbar',
             // 'honeypot',
             // 'secureheaders',
+        ],
+    ];
+    **/
+
+    // deepseek ka code if error hata do 
+
+         public array $globals = [
+        'before' => [
+            //'csrf' => ['except' => ['api/*']],
+            // 'honeypot',
+        ],
+        'after' => [
+            //'toolbar',
+            // 'honeypot',
         ],
     ];
 
@@ -105,3 +122,6 @@ class Filters extends BaseFilters
      */
     public array $filters = [];
 }
+
+
+

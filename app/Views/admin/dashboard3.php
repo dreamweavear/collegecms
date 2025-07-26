@@ -32,21 +32,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-danger mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Remove Student</h5>
-                                <p class="card-text h2">3</p>
-                            
+
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="<?= site_url('admin/change-password') ?>" class="text-decoration-none">
+            
+                            <div class="card text-white bg-primary hover-shadow">
+                            <div class="card-body text-center">
+                            <h5 class="card-title">Admin</h5>
+                            <p class="card-text">Change Password</p>
                             </div>
-                        </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
                 <!--   new row for subject Paper I-->
 
                 <div class="row mb-4">
 
-                      <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
                         <a href="<?= base_url('admin/chapters/adminAdmission') ?>" class="text-decoration-none">
   			
                             <div class="card text-white bg-primary hover-shadow">

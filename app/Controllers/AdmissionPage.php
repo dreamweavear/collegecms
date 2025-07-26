@@ -38,12 +38,17 @@ class AdmissionPage extends BaseController
         $model = new \App\Models\AdmissionModel();
 
         $data = [
+            'course' => $this->request->getPost('course'),
             'name' => $this->request->getPost('name'),
             'father_name' => $this->request->getPost('father_name'),
             'dob' => $this->request->getPost('dob'),
             'course' => $this->request->getPost('course'),
             'phone' => $this->request->getPost('phone'),
             'email' => $this->request->getPost('email'),
+             'course_fee' => $this->request->getPost('course_fee'),
+            'discount' => $this->request->getPost('discount'),
+            'admission_date' => $this->request->getPost('admission_date'),
+
             'photo' => $newName,
         ];
 

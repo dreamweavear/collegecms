@@ -6,5 +6,7 @@ class AdmissionModel extends Model
 {
     protected $table = 'admissions';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'father_name', 'dob', 'course', 'phone', 'email', 'photo'];
+    protected $allowedFields = [ 'admission_date', 'course', 'name', 'father_name', 'dob', 'course', 'phone', 'email', 'course_fee', 'discount',  'photo'];
 }
+
+     

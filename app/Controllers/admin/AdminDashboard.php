@@ -2,6 +2,9 @@
 namespace App\Controllers\Admin;
 use App\Models\AdmissionModel;
 
+use App\Controllers\BaseController;
+
+
 class AdminDashboard extends BaseController
 {
     public function index()

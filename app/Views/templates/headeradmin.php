@@ -93,6 +93,7 @@
   /* आइकन्स का साइज */
   .navbar-nav .bi {
     font-size: 1.1rem;
+  
   }
 </style>
 
@@ -242,12 +243,47 @@
                             <a class="nav-link sidebar-link active p-2" href="<?= base_url('admin/dashboard') ?>">
                                 <i class="bi bi-house-door me-2"></i> Dashboard
                             </a>
+                    <!--            <a class="nav-link sidebar-link active p-2" href="<?= site_url('auth/change-password') ?>">
+                                <i class="bi bi-house-door me-2"></i> Change password
+                            </a>
+
+                        -->
+
+<!-- मेनू लिंक में -->
+                
+                      
+                            <a class="nav-link sidebar-link active p-2" href="<?= site_url('admin/auth/change-password') ?>">
+                                <i class="bi bi-house-door me-2"></i> Change Password
+                            </a>
+
+                            <a class="nav-link sidebar-link active p-2" href="<?= base_url('admin/fees') ?>">
+                                <i class="bi bi-house-door me-2"></i> Fees Record
+                            </a>
+                               <a class="nav-link sidebar-link active p-2" href="<?= base_url('admin/fees/create') ?>">
+                                <i class="bi bi-house-door me-2"></i> Add Fees
+                            </a>
+
+
+                            <li class="nav-item">
+                            <a class="nav-link nav-link sidebar-link active p-2" href="<?= site_url('admin/fees_total_report') ?>">
+                            <i class="fas fa-file-invoice-dollar"></i> Fees Pending Report
+                            </a>
+                            </li>
+
+
+
+
                             <a class="nav-link sidebar-link active p-2" href="<?= base_url('admin/chapters') ?>">
                                 <i class="bi bi-house-door me-2"></i> Content admin page
                             </a>
-                            <a class="nav-link sidebar-link active p-2" href="<?= base_url('student-content') ?>">
-                                <i class="bi bi-house-door me-2"></i> Study Content
-                            </a>
+
+                       <a class="nav-link active d-flex align-items-center gap-2 py-2 px-3 rounded bg-gradient text-white fw-semibold shadow-sm" 
+   href="<?= site_url('admin/fees_total_report') ?>" 
+   style="background-color: #0078d4;">
+    <i class="bi bi-bar-chart-line"></i> Total Fees Report
+</a>
+
+
                         </li>
             <!-- course section -->
                         <li class="nav-item">

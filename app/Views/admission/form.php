@@ -13,6 +13,38 @@
         action="<?= isset($student) ? base_url('admin/admission/update/' . $student['id']) : base_url('admin/admission/store') ?>"
         enctype="multipart/form-data">
 
+            <div class="mb-3">
+                <label>Course Fee</label>
+                <input type="number" name="course_fee" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Discount</label>
+                <input type="number" name="discount" class="form-control" value="0" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Admission Date</label>
+                <input type="date" name="admission_date" class="form-control" required>
+            </div>
+
+
+              <div class="mb-3">
+                <label>Admission Feees Paid</label>
+            <input type="number" name="admission_fee" class="form-control" required>
+              </div>
+
+
+            <div class="mb-3">
+                <label> Receipt Number</label>
+                
+            <input type="number" name="receipt_number" class="form-control" required>
+            </div>
+
+
+
+
+
         <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" class="form-control" id="name" name="name"

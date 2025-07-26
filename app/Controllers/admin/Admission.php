@@ -2,7 +2,10 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\AdmissionModel;
+use App\Models\Admin\AdmissionModel;
+
+
+
 
 class Admission extends BaseController
 {
@@ -21,6 +24,9 @@ class Admission extends BaseController
     public function store()
     {
         helper(['form', 'url']);
+         // ✅ STEP 1: Define model पहले
+        $admissionModel = new \App\Models\Admin\AdmissionModel();
+        $feesModel = new \App\Models\Admin\FeeModel();
 
         $rules = [
             'name' => 'required',
@@ -42,20 +48,49 @@ class Admission extends BaseController
         $newName = $photoFile->getRandomName();
         $photoFile->move('uploads/', $newName);
 
-        $model = new AdmissionModel();
+ 
 
         $data = [
+            'admission_date' => $this->request->getPost('admission_date'),
+
+            'admission_amount' => $this->request->getPost('admission_amount'),
+            'receipt_number'   => $this->request->getPost('receipt_number'),
+
+            'course' => $this->request->getPost('course'),
             'name' => $this->request->getPost('name'),
             'father_name' => $this->request->getPost('father_name'),
             'dob' => $this->request->getPost('dob'),
-            'course' => $this->request->getPost('course'),
             'phone' => $this->request->getPost('phone'),
             'email' => $this->request->getPost('email'),
+            'course_fee' => $this->request->getPost('course_fee'),
+            'discount' => $this->request->getPost('discount'),
+        
             'photo' => $newName,
         ];
 
-        $model->insert($data);
-        return redirect()->to('/admin/admission')->with('success', 'Admission created successfully');
+
+
+        $admissionModel->insert($data); // 👈 यही model object use करें
+        $studentId = $admissionModel->getInsertID(); // ✅ now correct ID
+
+
+        // Step 3: Save first installment as admission fee
+        $admissionFee = $this->request->getPost('admission_fee');
+        if ($admissionFee > 0) {
+        $feesModel->save([
+            'student_id' => $studentId,
+            'installment_number' => 1,
+            'amount' => $admissionFee,
+            'payment_date' => $this->request->getPost('admission_date'),
+            //'receipt_number' => rand(1000, 9999)
+
+            'receipt_number' => $this->request->getPost('receipt_number')
+
+
+        ]);
+    }
+        //return redirect()->to('/admin/admission')->with('success', 'Admission created successfully');
+            return redirect()->to('/admin/fees/view/' . $studentId);
     }
 
     public function edit($id)
@@ -68,6 +103,8 @@ class Admission extends BaseController
         }
 
         return view('admission/edit', $data);  // अगर आपने view/admission/edit.php रखा है
+    
+
     }
 
     public function delete($id)

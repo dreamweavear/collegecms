@@ -25,12 +25,22 @@ $routes->match(['get','post'], 'admin/admission/update/(:num)', 'Admin\Admission
 $routes->get('admin/admission/edit/(:num)', 'Admin\Admission::edit/$1');
 $routes->match(['get','post'], 'admin/admission/delete/(:num)', 'Admin\Admission::delete/$1'); 
  //admin dashbord
-$routes->get('/admin/dashboard', 'AdminDashboard::index');
+$routes->get('/admin/dashboard', 'Admin\AdminDashboard::index');
 $routes->get('/logout', 'Admin\Auth::logout');
 
 $routes->get('/login', 'Admin\Auth::login');
 $routes->post('/check', 'Admin\Auth::check');
 $routes->get('/logout', 'Admin\Auth::logout');
+
+
+//$routes->match(['get', 'post'], 'admin/auth/change-password', 'Admin\Auth::changePassword');
+
+$routes->group('admin', function($routes) {
+    $routes->match(['get', 'post'], 'auth/change-password', 'Admin\Auth::changePassword', ['as' => 'admin.changePassword']);
+});
+
+
+$routes->setTranslateUriDashes(true);
 
 
 // routes for contact form
@@ -103,6 +113,21 @@ $routes->group('admin/units', function($routes) {
     $routes->get('student-content/(:segment)', 'Academic\StudentContentController::viewChapter/$1');
     
     $routes->get('admin/chapters/getUnitsByPaper', 'Admin\ChapterController::getUnitsByPaper');
+
+// routes for fees
+$routes->get('admin/fees', 'Admin\Fees::index');
+$routes->setAutoRoute(true); // Ensure it's true
+
+$routes->get('admin/fees/create', 'Admin\Fees::create');
+$routes->post('admin/fees/store', 'Admin\Fees::store');
+$routes->get('admin/fees/edit/(:num)', 'Admin\Fees::edit/$1');
+$routes->post('admin/fees/update/(:num)', 'Admin\Fees::update/$1');
+$routes->get('admin/fees/delete/(:num)', 'Admin\Fees::delete/$1');
+$routes->get('admin/fees/view/(:num)', 'Admin\Fees::view/$1');
+$routes->get('admin/fees/receipt/(:num)', 'Admin\Fees::receipt/$1');
+$routes->get('admin/fees_total_report', 'Admin\Fees::feesTotalReport');
+
+
 
 
 $routes->get('pages', [Pages::class, 'index']);
